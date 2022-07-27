@@ -339,19 +339,20 @@ address {
   min-width: 358px;
   padding: 16px 15px;
   font-size: 16px;
-  line-height: 1.2x;
+  line-height: 1.2;
   color: var(--background);
   background: transparent;
-  border: none;
+  outline: none;
   cursor: pointer;
-  outline: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-  transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-subscribe .form-input:focus {
-  outline: 1px solid var(--active-color);
+  outline: none;
+  border: 1px solid var(--active-color);
 }
 
 .form-subscribe .form-input::placeholder {
@@ -784,8 +785,8 @@ address {
   line-height: 1.14;
   letter-spacing: 0.01em;
   color: var(--black);
-  outline: 1px solid rgba(33, 33, 33, 0.2);
-  border: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+
   border-radius: 4px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -847,7 +848,8 @@ address {
 
 .form-callback .form-field:focus-within .form-input {
   border-color: transparent;
-  outline: 1px solid var(--active-color);
+  border: 1px solid var(--active-color);
+  outline: none;
 }
 
 .form-callback .form-field:focus-within svg {
