@@ -129,7 +129,8 @@ address {
 
 .button-active,
 .button:hover,
-.button:focus {
+.button:focus,
+.button-submit {
   color: var(--text-primary-color);
   background-color: var(--active-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
@@ -294,6 +295,10 @@ address {
 }
 
 /* footer-socials */
+.footer-socials {
+  margin-right: 93px;
+}
+
 .footer-socials-link {
   color: var(--background);
   background-color: rgba(255, 255, 255, 0.1);
@@ -309,6 +314,60 @@ address {
   color: var(--background);
 }
 
+/* form-subscribe */
+
+.form-subscribe .offer {
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+
+  color: var(--background);
+}
+
+.form-subscribe-fields {
+  display: flex;
+  border: none;
+  padding: 0;
+}
+.form-subscribe .form-field {
+  margin-right: 12px;
+}
+
+.form-subscribe .form-input {
+  min-width: 358px;
+  padding: 16px 15px;
+  font-size: 16px;
+  line-height: 1.2x;
+  color: var(--background);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-subscribe .form-input:focus {
+  outline: 1px solid var(--active-color);
+}
+
+.form-subscribe .form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.form-subscribe .button-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 29px;
+}
+
+.form-subscribe .button-submit svg {
+  margin-left: 10px;
+}
 /* index.html */
 /* hero  */
 .hero {
@@ -346,7 +405,8 @@ address {
   color: var(--text-primary-color);
 }
 
-.button.primary {
+.button.primary,
+.button-submit {
   padding: 10px 32px;
 
   font-weight: 700;
@@ -361,8 +421,8 @@ address {
 
 .button.primary:hover,
 .button.primary:focus,
-.form-button:hover,
-.form-button:focus {
+.button-submit:hover,
+.button-submit:focus {
   background-color: var(--primary-hover);
 }
 
@@ -695,7 +755,7 @@ address {
 
 /* ======form================= */
 
-.form-offer {
+.form-callback .offer {
   margin-bottom: 12px;
   font-size: 20px;
   font-weight: 700;
@@ -703,14 +763,14 @@ address {
   text-align: center;
 }
 
-.form-field {
+.form-callback .form-field {
   position: relative;
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
 }
 
-.form-field label {
+.form-callback .form-field .form-label {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
@@ -718,7 +778,7 @@ address {
   margin-bottom: 4px;
 }
 
-.form-field .form-input {
+.form-callback .form-field .form-input {
   padding: 12px 12px 12px 42px;
   font-size: 14px;
   line-height: 1.14;
@@ -732,27 +792,28 @@ address {
   cursor: pointer;
 }
 
-.form-field .form-input::placeholder {
+.form-callback .form-field .form-input::placeholder {
   font-size: 14px;
   color: rgba(117, 117, 117, 0.5);
 }
 
-.form-input.form-textarea {
+.form-callback .form-input.form-textarea {
   padding: 12px 16px;
   resize: none;
 }
 
-.field-comments {
+.form-callback .field-comments {
   margin-bottom: 20px;
 }
-.field-conditions {
+
+.form-callback .field-conditions {
   flex-direction: row;
   justify-content: center;
   align-items: center;
   margin-bottom: 40px;
 }
 
-.field-conditions .label-condition {
+.form-callback .field-conditions .label-condition {
   margin-left: 5px;
   margin-bottom: 0;
   font-size: 14px;
@@ -767,20 +828,16 @@ address {
   cursor: pointer;
 }
 
-.form-buttons {
+.form-callback .form-buttons {
   text-align: center;
 }
 
-.form-button {
+.button-submit {
   padding-right: 55px;
   padding-left: 56px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
-
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-field svg {
+.form-callback .form-field svg {
   position: absolute;
   bottom: 11px;
   left: 12px;
@@ -788,16 +845,16 @@ address {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-field:focus-within .form-input {
+.form-callback .form-field:focus-within .form-input {
   border-color: transparent;
   outline: 1px solid var(--active-color);
 }
 
-.form-field:focus-within svg {
+.form-callback .form-field:focus-within svg {
   fill: var(--active-color);
 }
 
-.form-checkbox {
+.form-callback .form-checkbox {
   position: absolute;
   white-space: nowrap;
   width: 1px;
@@ -810,24 +867,18 @@ address {
   margin: -1px;
 }
 
-.form-checkbox + label::before {
-  content: ' ';
+.form-callback .check-box {
   display: block;
   height: 15px;
   width: 16px;
+  background-origin: border-box;
   border: 2px solid #212121;
-  border-radius: 3px;
-
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
+  border-radius: 2px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-checkbox:checked + label::before {
-  background-origin: border-box;
+.form-callback .form-checkbox:checked + .check-box {
   border: 2px solid var(--active-color);
   background: var(--active-color) url('../images/elements/icon-check.svg') center center no-repeat;
   background-size: contain;
